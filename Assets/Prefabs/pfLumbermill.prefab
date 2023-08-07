@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2809945732917135792}
   - component: {fileID: 8820164379169442198}
+  - component: {fileID: 1181471744121115429}
+  - component: {fileID: 5302321009484713161}
   m_Layer: 0
   m_Name: pfLumbermill
   m_TagString: Untagged
@@ -84,3 +86,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1181471744121115429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929821455077274938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7fb393234b6e242b8424eddffa981c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5302321009484713161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929821455077274938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629bb138a799f1942830f13694207aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingType: {fileID: 11400000, guid: 35686fcc07697784488350954daaa0ce, type: 2}
