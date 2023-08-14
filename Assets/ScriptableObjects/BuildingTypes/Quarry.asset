@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameString: Quarry
   prefab: {fileID: 7576102032390807593, guid: 8ed8813f24bb9f742a135861fd85d514, type: 3}
+  hasResourceGeneratorData: 1
   resourceGeneratorData:
     timerMax: 1
     resourceType: {fileID: 11400000, guid: 6baa6f25dfbf3e14a9f85f52fae3e2ed, type: 2}
+    resourceDetectionRadius: 5
+    maxResourceAmount: 3
+  sprite: {fileID: 21300000, guid: 0386cf5f109793c4f89e740c6d01b102, type: 3}
+  minConstructionRadius: 5
+  constructonResourceCostArray:
+  - resourceType: {fileID: 11400000, guid: 938066a1850cad844a32d4737279fa64, type: 2}
+    amount: 50

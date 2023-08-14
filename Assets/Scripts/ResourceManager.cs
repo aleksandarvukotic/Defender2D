@@ -11,6 +11,8 @@ public class ResourceManager : MonoBehaviour
 
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionaty;
 
+    [SerializeField] private List<ResourceAmount> startingResourceAmount;
+
     private void Awake()
     {
         Instance = this;
@@ -24,16 +26,9 @@ public class ResourceManager : MonoBehaviour
             resourceAmountDictionaty[resourceType] = 0;
         }
 
-        TestLogResourceAmountDictionary();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
+        foreach (ResourceAmount resourceAmount in startingResourceAmount)
         {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
-            AddResource(resourceTypeList.list[0], 2);
-            TestLogResourceAmountDictionary();
+            AddResource(resourceAmount.resourceType, resourceAmount.amount);
         }
     }
 
@@ -50,12 +45,37 @@ public class ResourceManager : MonoBehaviour
         resourceAmountDictionaty[resourceType] += amount;
 
         OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
-
-        TestLogResourceAmountDictionary();
     }
 
     public int GetResourceAmount(ResourceTypeSO resourceType)
     {
         return resourceAmountDictionaty[resourceType];
+    }
+
+    public bool CanAfford(ResourceAmount[] resourceAmountArray)
+    {
+        foreach(ResourceAmount resourceAmount in resourceAmountArray)
+        {
+            if(GetResourceAmount(resourceAmount.resourceType) >= resourceAmount.amount)
+            {
+                //You can afford the building!
+            }
+            else
+            {
+                //You can't afford the building!
+                return false;
+            }
+        }
+
+        //Can afford all
+        return true;
+    }
+
+    public void SpendResources(ResourceAmount[] resourceAmountArray)
+    {
+        foreach (ResourceAmount resourceAmount in resourceAmountArray)
+        {
+            resourceAmountDictionaty[resourceAmount.resourceType] -= resourceAmount.amount;
+        }
     }
 }

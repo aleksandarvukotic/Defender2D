@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameString: Lumbermill
   prefab: {fileID: 2809945732917135792, guid: cf19ce21ef4e8164fa5594635b13b703, type: 3}
+  hasResourceGeneratorData: 1
   resourceGeneratorData:
     timerMax: 0.5
     resourceType: {fileID: 11400000, guid: 938066a1850cad844a32d4737279fa64, type: 2}
+    resourceDetectionRadius: 7
+    maxResourceAmount: 7
+  sprite: {fileID: 21300000, guid: b9f1c29ee0ea64c46b1add8bec207603, type: 3}
+  minConstructionRadius: 5
+  constructonResourceCostArray:
+  - resourceType: {fileID: 11400000, guid: 938066a1850cad844a32d4737279fa64, type: 2}
+    amount: 25
